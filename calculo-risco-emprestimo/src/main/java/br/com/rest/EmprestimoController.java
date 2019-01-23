@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.mapper.EmprestimoMapper;
@@ -22,8 +23,9 @@ public class EmprestimoController {
 	@Autowired 
 	EmprestimoMapper emprestimoMapper;
 		
-	@RequestMapping(method = RequestMethod.POST)
-	public EmprestimoDB emprestimo(@RequestParam(value = "nomeCliente") String nomeCliente, @RequestParam(value = "limite") Double limiteCredito) {
+	@RequestMapping(method = RequestMethod.POST, produces = "application/json")
+	@ResponseBody
+	public EmprestimoDB emprestimo(@RequestParam(value = "nomeCliente") String nomeCliente, @RequestParam(value = "limite") int limiteCredito) {
 	 return emprestimoRepository.save(emprestimoMapper.calculoMapper(nomeCliente, limiteCredito));
 	
 	}

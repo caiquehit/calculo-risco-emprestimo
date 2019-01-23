@@ -3,10 +3,10 @@ package br.com.dto;
 public class RiscoDTO {
 	
 	public String tipoRisco;
-	public Double porcetagemRisco;
-	public Double valorMargemRisco;
+	public int porcetagemRisco;
+	public int valorMargemRisco;
 	
-	public RiscoDTO(String tipoRisco, Double porcetagemRisco, Double valorMargemRisco) {
+	public RiscoDTO(String tipoRisco, int porcetagemRisco, int valorMargemRisco) {
 		this.tipoRisco = tipoRisco;
 		this.porcetagemRisco = porcetagemRisco;
 		this.valorMargemRisco = valorMargemRisco;
@@ -19,16 +19,16 @@ public class RiscoDTO {
 	public void setTipoRisco(String tipoRisco) {
 		this.tipoRisco = tipoRisco;
 	}
-	public Double getPorcetagemRisco() {
+	public int getPorcetagemRisco() {
 		return porcetagemRisco;
 	}
-	public void setPorcetagemRisco(Double porcetagemRisco) {
+	public void setPorcetagemRisco(int porcetagemRisco) {
 		this.porcetagemRisco = porcetagemRisco;
 	}
-	public Double getValorMargemRisco() {
+	public int getValorMargemRisco() {
 		return valorMargemRisco;
 	}
-	public void setValorMargemRisco(Double valorMargemRisco) {
+	public void setValorMargemRisco(int valorMargemRisco) {
 		this.valorMargemRisco = valorMargemRisco;
 	}
 		

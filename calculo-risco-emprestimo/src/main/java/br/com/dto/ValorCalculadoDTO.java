@@ -2,7 +2,7 @@ package br.com.dto;
 
 public class ValorCalculadoDTO {
 	public RiscoDTO riscoDTO;
-	public Double valorCalculado;
+	public int valorCalculado;
 	
 	
 	public RiscoDTO getRiscoDTO() {
@@ -11,10 +11,10 @@ public class ValorCalculadoDTO {
 	public void setRiscoDTO(RiscoDTO riscoDTO) {
 		this.riscoDTO = riscoDTO;
 	}
-	public Double getValorCalculado() {
+	public int getValorCalculado() {
 		return valorCalculado;
 	}
-	public void setValorCalculado(Double valorCalculado) {
+	public void setValorCalculado(int valorCalculado) {
 		this.valorCalculado = valorCalculado;
 	}
 }

@@ -9,7 +9,7 @@ import br.com.model.EmprestimoDB;
 @Component
 public class EmprestimoMapper {
 	
-	public EmprestimoDB calculoMapper(String nomeCliente, Double limiteCredito) {
+	public EmprestimoDB calculoMapper(String nomeCliente, int limiteCredito) {
 		EmprestimoBusiness emprestimoBussiness = new EmprestimoBusiness();
 		ValorCalculadoDTO calculo = emprestimoBussiness.riscoEmprestimo(limiteCredito);
 		

@@ -8,12 +8,14 @@ import br.com.dto.ValorCalculadoDTO;
 
 public class EmprestimoBusiness {
 	
-	public ValorCalculadoDTO riscoEmprestimo(Double limiteCredito) {
+	public ValorCalculadoDTO riscoEmprestimo(int limiteCredito) {
 		
 		List<RiscoDTO> calculaRisco = populaDados();
 		ValorCalculadoDTO valorCalculado = new ValorCalculadoDTO();
 		for (RiscoDTO riscoDTO : calculaRisco) {
-			if(limiteCredito >= riscoDTO.getValorMargemRisco()) {
+			if(("B".equalsIgnoreCase(riscoDTO.tipoRisco) && limiteCredito < riscoDTO.getValorMargemRisco()) 
+				|| ("C".equalsIgnoreCase(riscoDTO.tipoRisco) && limiteCredito > riscoDTO.getValorMargemRisco()) 
+					) {
 				valorCalculado.setRiscoDTO(riscoDTO);
 				valorCalculado.setValorCalculado(retornaValorCalculado(limiteCredito, riscoDTO.getPorcetagemRisco()));
 			}
@@ -21,9 +23,10 @@ public class EmprestimoBusiness {
 		return valorCalculado;
 	}
 	
-	private Double retornaValorCalculado(Double valor, Double porcentagem) {
-		Double calculo = 0.0;
-		calculo = (valor*porcentagem)/100.0; 
+	private int retornaValorCalculado(int valor, int porcentagem) {
+		int calculo = 0;
+		calculo = (valor*porcentagem)/100; 
+		calculo = valor + calculo;
 		return calculo;
 	}
 	
@@ -31,9 +34,9 @@ public class EmprestimoBusiness {
 		
 		List<RiscoDTO> risco = new ArrayList<RiscoDTO>();
 				
-		risco.add(new RiscoDTO("A", 0.0, 0.0));
-		risco.add(new RiscoDTO("B", 0.10, 200.0));
-		risco.add(new RiscoDTO("C", 0.20, 300.0));
+		risco.add(new RiscoDTO("A", 0, 0));
+		risco.add(new RiscoDTO("B", 10, 200));
+		risco.add(new RiscoDTO("C", 20, 300));
 		
 		return risco;
 	}

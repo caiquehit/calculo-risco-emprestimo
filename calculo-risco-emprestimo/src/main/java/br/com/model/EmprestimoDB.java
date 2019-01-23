@@ -22,13 +22,13 @@ public class EmprestimoDB {
 	private String tipoRisco;
 	
 	@Column(name="LimiteCredito", nullable = false)
-	private Double limiteCredito;
+	private int limiteCredito;
 	
 	@Column(name="TaxaJuros", nullable = false)
-	private Double taxaJuros;
+	private int taxaJuros;
 	
 	@Column(name="ValorEmprestimo", nullable = false)
-	private Double valorEmprestimo;
+	private int valorEmprestimo;
 	
 	
 	public Long getId() {
@@ -55,27 +55,27 @@ public class EmprestimoDB {
 		this.tipoRisco = tipoRisco;
 	}
 
-	public Double getLimiteCredito() {
+	public int getLimiteCredito() {
 		return limiteCredito;
 	}
 
-	public void setLimiteCredito(Double limiteCredito) {
+	public void setLimiteCredito(int limiteCredito) {
 		this.limiteCredito = limiteCredito;
 	}
 
-	public Double getTaxaJuros() {
+	public int getTaxaJuros() {
 		return taxaJuros;
 	}
 
-	public void setTaxaJuros(Double taxaJuros) {
+	public void setTaxaJuros(int taxaJuros) {
 		this.taxaJuros = taxaJuros;
 	}
 
-	public Double getValorEmprestimo() {
+	public int getValorEmprestimo() {
 		return valorEmprestimo;
 	}
 
-	public void setValorEmprestimo(Double valorEmprestimo) {
+	public void setValorEmprestimo(int valorEmprestimo) {
 		this.valorEmprestimo = valorEmprestimo;
 	}
 }
